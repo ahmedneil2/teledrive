@@ -1,0 +1,8 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "./teldrive serve"
+healthcheckPath = "/"
+healthcheckTimeout = 300

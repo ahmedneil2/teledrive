@@ -1,0 +1,55 @@
+[telegram]
+# টেলিগ্রাম API ক্রেডেনশিয়াল
+api_id = 18117505
+api_hash = "1428e11bc3279a1193f47079c8d748e8"
+# সেশন ফাইল পাথ (ঐচ্ছিক)
+session_file = "teldrive.session"
+# টেলিগ্রাম চ্যানেল আইডি (ঐচ্ছিক)
+# channel_id = -1002482109256
+
+[server]
+# সার্ভার পোর্ট (Railway এনভায়রনমেন্ট ভেরিয়েবল থেকে নেবে)
+port = "${PORT}"
+# সার্ভার হোস্ট (ঐচ্ছিক)
+host = "0.0.0.0"
+# ডিবাগ মোড (ঐচ্ছিক)
+debug = false
+# CORS সেটিংস (ঐচ্ছিক)
+cors_allow_origins = ["*"]
+# সিকিউরিটি সেটিংস (ঐচ্ছিক)
+secure_cookie = false
+
+[database]
+# ডাটাবেস টাইপ (PostgreSQL ব্যবহার করছি)
+type = "postgres"
+# ডাটাবেস কানেকশন স্ট্রিং (Railway এনভায়রনমেন্ট ভেরিয়েবল থেকে নেবে)
+dsn = "${DATABASE_URL}"
+# ডাটাবেস মাইগ্রেশন (ঐচ্ছিক)
+auto_migrate = true
+
+[storage]
+# ফাইল আপলোড সেটিংস
+chunk_size = 1048576  # 1MB
+concurrent_uploads = 4
+# টেম্পোরারি ফাইল ডিরেক্টরি (ঐচ্ছিক)
+temp_dir = "/tmp"
+# ক্যাশ সেটিংস (ঐচ্ছিক)
+cache_dir = "/tmp/teldrive_cache"
+cache_size = 1073741824  # 1GB
+
+[auth]
+# অথেনটিকেশন সেটিংস
+# JWT সিক্রেট (ঐচ্ছিক, রেন্ডম জেনারেট হবে যদি না দেওয়া হয়)
+jwt_secret = "${JWT_SECRET}"
+# টোকেন এক্সপায়ার টাইম (ঐচ্ছিক)
+token_expiry = "720h"  # 30 দিন
+# রিফ্রেশ টোকেন এক্সপায়ার টাইম (ঐচ্ছিক)
+refresh_token_expiry = "8760h"  # 1 বছর
+
+[ui]
+# UI সেটিংস (ঐচ্ছিক)
+title = "TelDrive"
+# লোগো URL (ঐচ্ছিক)
+logo_url = "/assets/logo.png"
+# ফেভিকন URL (ঐচ্ছিক)
+favicon_url = "/assets/favicon.ico"
